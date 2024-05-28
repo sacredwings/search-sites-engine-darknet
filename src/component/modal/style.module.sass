@@ -1,0 +1,41 @@
+.modal
+  position: fixed /* фиксированное положение */
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: rgba(0,0,0,0.5) /* цвет фона */
+  z-index: 1050
+  transition: opacity 200ms ease-in /* анимация перехода */
+  margin: 0
+  padding: 0
+
+  opacity: 1 /* делаем окно видимым */
+  pointer-events: auto /* элемент видим для событий мыши */
+  overflow-y: auto /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+
+/* ширина модального окна и его отступы от экрана */
+.modalDialog
+  position: relative
+  width: auto
+  margin: 10px
+
+  @media (min-width: 720px)
+    max-width: 680px
+    margin: 30px auto /* для отображения модального окна по центру */
+
+
+/* свойства для блока, содержащего контент модального окна */
+.modalContent
+  position: relative
+  display: flex
+  flex-direction: column
+  background-color: #fff
+  background-clip: padding-box
+  border: 1px solid rgba(0,0,0,.2)
+  border-radius: .3rem
+  outline: 0
+
+  @media (min-width: 768px)
+    .modalContent
+      box-shadow: 0 5px 15px rgba(0,0,0,.5)
