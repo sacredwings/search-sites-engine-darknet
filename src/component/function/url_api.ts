@@ -19,7 +19,7 @@ export async function ServerSiteAdd ({
     domain,
     domain_address
 }: interfaceSiteAdd){
-    if (is_server()) axios.defaults.baseURL = `http://127.0.0.1:3000`
+    if (is_server()) axios.defaults.baseURL = `http://127.0.0.1:3060`
     let gtoken = await reCaptchaExecute(config.google.reCaptcha.public, `album_add`)
 
     let arFields = {
@@ -51,7 +51,7 @@ export async function ServerSiteGet ({
 }: interfaceSiteGet,{
     cookies=null
 }) {
-    if (is_server()) axios.defaults.baseURL = `http://127.0.0.1:3000`
+    if (is_server()) axios.defaults.baseURL = `http://127.0.0.1:3060`
 
     let arFields = {
         params: {
@@ -74,7 +74,7 @@ export async function ServerSiteGet ({
 }
 
 export async function ServerSiteGetById ({ids}: interfaceSiteGetById, {cookies=null}) {
-    if (is_server()) axios.defaults.baseURL = `http://127.0.0.1:3000`
+    if (is_server()) axios.defaults.baseURL = `http://127.0.0.1:3060`
 
     let arFields = {
         params: {
