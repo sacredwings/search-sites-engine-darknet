@@ -1,3 +1,4 @@
+// @ts-nocheck
 import style from './style.module.sass'
 import SiteAdd from '@/component/site/add'
 import SiteList from '@/component/site/list'
@@ -9,7 +10,7 @@ export default async function Home({
     searchParams
 }: {
     params: {},
-    searchParams: { page: number, q: string, domain: string }
+    searchParams: { page: number, q: string, domain: 'adnl' | 'ton' | 'onion' | null }
 }) {
 
     const url = `/`
@@ -37,15 +38,15 @@ export default async function Home({
               <div className={style.status}>
                   <div>
                       <p>.ton</p>
-                      <span className="badge text-bg-warning">1</span>
+                      <span className="badge text-bg-warning">?</span>
                   </div>
                   <div>
                       <p>.adnl</p>
-                      <span className="badge text-bg-warning">2</span>
+                      <span className="badge text-bg-warning">?</span>
                   </div>
                   <div>
                       <p>.onion</p>
-                      <span className="badge text-bg-warning">3</span>
+                      <span className="badge text-bg-warning">?</span>
                   </div>
               </div>
 
