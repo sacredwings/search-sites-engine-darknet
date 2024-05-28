@@ -1,6 +1,6 @@
 // @ts-nocheck
 import {
-    interfaceSiteAdd,
+    interfaceSiteAdd, interfaceSiteCount,
     interfaceSiteGet,
     interfaceSiteGetById
 } from './url_api_type'
@@ -89,6 +89,28 @@ export async function ServerSiteGetById ({ids}: interfaceSiteGetById, {cookies=n
     console.log(url)
     let res = await axios.get(url, arFields);
     return res.data.response
+}
+
+export async function ServerSiteCount ({
+    domain=null,
+}: interfaceSiteCount,{
+    cookies=null
+}) {
+    if (is_server()) axios.defaults.baseURL = `http://127.0.0.1:3060`
+
+    let arFields = {
+        params: {
+            domain,
+        } as interfaceSiteCount,
+        headers: {
+            Cookie: cookies
+        }
+    } as AxiosRequestConfig
+
+    const url = `/api/site/count`
+    console.log(url)
+    let result = await axios.get(url, arFields)
+    return result.data.response
 }
 
 function is_server () {

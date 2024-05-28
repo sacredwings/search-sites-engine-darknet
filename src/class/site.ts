@@ -130,11 +130,23 @@ export class CSite {
 
     static async Count ( fields ) {
         try {
+            let arAggregate = []
+            arAggregate.push({
+                $match: {}
+            })
+
+            if (fields.domain) arAggregate[0].$match.domain = fields.domain
+
+            arAggregate.push({
+                $count: 'count'
+            })
+
             const mongoClient = Store.GetMongoClient()
             let collection = mongoClient.collection('site');
+            let result = await collection.aggregate(arAggregate).toArray()
 
-            let result = await collection.count()
-            return result
+            if (!result.length) return 0
+            return result[0].count
 
         } catch (err) {
             console.log(err)

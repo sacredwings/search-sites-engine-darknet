@@ -18,7 +18,7 @@ export default function SiteElement ({element}) {
             <h1 className="card-title">{form.title}</h1>
             <p className="card-text">{form.description}</p>
             <p className={style.create_date}>{DateFormat(form.create_date)}</p>
-            <a href="#" className="card-link">{form.domain_address}.{form.domain}</a>
+            <a href={`http://${form.domain_address}.${form.domain}`} target="_blank" className="card-link">{form.domain_address}.{form.domain}</a>
 
         </>
 

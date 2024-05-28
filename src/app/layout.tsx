@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import "fontawesome-free-v6/css/all.css"
 import '@/app/global.sass'
 import YandexMetrika from '@/component/metrika/yandex-metrika'
 import GoogleAnalytics from '@/component/metrika/google-analytics'

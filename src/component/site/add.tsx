@@ -108,7 +108,7 @@ export default function Add ({ElementAdd}) {
     return (
         <>
             <div className="d-grid gap-2">
-                <button className="btn btn-primary" type="button" onClick={handleButton}>Add site</button>
+                <button className="btn btn-success" type="button" onClick={handleButton}>Add site</button>
             </div>
 
             {visible ? <Modal Close={handleButton} title={'Add site'}>

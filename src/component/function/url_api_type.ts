@@ -23,4 +23,6 @@ export interface interfaceSiteGetById {
     ids: string[]
 }
 
-
+export interface interfaceSiteCount {
+    domain: 'adnl' | 'ton' | 'onion' | null
+}
